@@ -10,16 +10,12 @@ public class GameController : MonoBehaviour
     private float _timer = 2.1f;
     private float _pipeHeight;
 
-    private int _points;
-    
-
     public List<GameObject> _pipeList = new List <GameObject>();
 
     // Start is called before the first frame update
     void Start()
     {
-        // make instance of player first before accessing method without referenece
-        Locator.Instance.player.PointsChanged += UpdatePoints;
+        Locator.Instance.Player.EndGame += StopSpawn;
     }
 
     // Update is called once per frame
@@ -46,9 +42,8 @@ public class GameController : MonoBehaviour
         _pipeList.Add(Instantiate(_pipePrefab, new Vector2(102.52f, _pipeHeight), Quaternion.identity));
     }
 
-    private void UpdatePoints()
+    private void StopSpawn()
     {
-        _points++;
-        GameObject.Find("Score").GetComponent<TextMeshProUGUI>().text = "Score: " + _points;
+        MonoBehaviour.Destroy(gameObject.GetComponent<GameController>());
     }
 }

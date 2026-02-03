@@ -10,10 +10,6 @@ public class Pipe : MonoBehaviour
     {
         _gameController = GameObject.FindWithTag("GameController");
         
-        if( _gameController != null)
-        {
-            Debug.Log("Found");
-        }
     }
 
     // Update is called once per frame

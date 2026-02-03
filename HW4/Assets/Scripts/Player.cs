@@ -41,25 +41,26 @@ public class Player : MonoBehaviour
         _lowerPipe = GameObject.Find("Lower Pipe");
         _pointBox = GameObject.Find("PointBox");
 
-        if( _upperPipe != null)
-        {
-            Debug.Log("Found Pipe");
-        }
-
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         
-        if (collision.gameObject == _upperPipe || _lowerPipe)
+        if(collision.gameObject == _lowerPipe || _upperPipe)
         {
-            EndGame.Invoke();
-            Debug.Log("bonk");
-        }
-        if (collision.gameObject == _pointBox)
-        {
-            PointsChanged.Invoke();
-            Debug.Log("success");
+            if(collision.gameObject != _pointBox)
+            {
+                Debug.Log("Bonk");
+                EndGame.Invoke();
+                Destroy(gameObject);
+                
+            }
+            else if (collision.gameObject == _pointBox)
+            {
+                Debug.Log("Point");
+                PointsChanged.Invoke();
+            }
+            
         }
 
     }

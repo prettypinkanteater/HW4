@@ -6,7 +6,7 @@ public class Locator : MonoBehaviour
 {
     public static Locator Instance {  get; private set; }
 
-    public Player player {  get; private set; }
+    public Player Player {  get; private set; }
 
     private void Awake()
     {
@@ -22,8 +22,9 @@ public class Locator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameObject playerObj = GameObject.Find("player");
-        player = playerObj.GetComponent<Player>();
+        GameObject playerObj = GameObject.Find("Player");
+        Player = playerObj.GetComponent<Player>();
+
     }
 
     // Update is called once per frame
