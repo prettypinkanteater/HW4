@@ -9,8 +9,7 @@ public class AudioSystem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Locator.Instance.Player.EndGame += PlayDeathSound;
-        Locator.Instance.Player.PointsChanged += PlayPointSound;
+        Locator.Instance.Player.EndGame += PlayPointSound;
     }
 
     // Update is called once per frame
@@ -19,12 +18,12 @@ public class AudioSystem : MonoBehaviour
         
     }
 
-    private void PlayDeathSound()
+    void PlayDeathSound()
     {
         _death.Play();
     }
 
-    private void PlayPointSound()
+     void PlayPointSound()
     {
         _point.Play();
     }

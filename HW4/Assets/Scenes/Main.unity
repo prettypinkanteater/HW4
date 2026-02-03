@@ -249,7 +249,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 0
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -618,7 +618,6 @@ GameObject:
   - component: {fileID: 739405908}
   - component: {fileID: 739405912}
   - component: {fileID: 739405913}
-  - component: {fileID: 739405916}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -800,20 +799,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 30
   _flySound: {fileID: 1422220064}
---- !u!114 &739405916
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 739405907}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f0b3db83a67d904f9f58300ae6aba92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _death: {fileID: 653288138}
-  _point: {fileID: 537674887}
 --- !u!1 &751648465
 GameObject:
   m_ObjectHideFlags: 0
@@ -1040,6 +1025,7 @@ GameObject:
   - component: {fileID: 1416232182}
   - component: {fileID: 1416232181}
   - component: {fileID: 1416232183}
+  - component: {fileID: 1416232184}
   m_Layer: 0
   m_Name: GameController
   m_TagString: GameController
@@ -1088,6 +1074,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d731d80eaf7d0e41b469a9587c49b39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1416232184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1416232180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f0b3db83a67d904f9f58300ae6aba92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _deathSound: {fileID: 653288138}
+  _pointSound: {fileID: 537674887}
 --- !u!1 &1422220063
 GameObject:
   m_ObjectHideFlags: 0
@@ -1492,5 +1492,5 @@ SceneRoots:
   - {fileID: 1416232182}
   - {fileID: 1422220065}
   - {fileID: 653288139}
-  - {fileID: 884820606}
   - {fileID: 537674888}
+  - {fileID: 884820606}
